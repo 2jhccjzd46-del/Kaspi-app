@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#F14635" />
+  <title>Kaspi Demo</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <div id="loginScreen" class="login-screen">
+    <div class="login-logo">kaspi</div>
+    <div class="login-title">Введите код доступа</div>
+    <div class="pin-dots" id="pinDots">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="pin-error hidden" id="pinError">Неверный код</div>
+
+    <div class="numpad">
+      <button data-num="1"><span>1</span></button>
+      <button data-num="2"><span>2</span><small>ABC</small></button>
+      <button data-num="3"><span>3</span><small>DEF</small></button>
+      <button data-num="4"><span>4</span><small>GHI</small></button>
+      <button data-num="5"><span>5</span><small>JKL</small></button>
+      <button data-num="6"><span>6</span><small>MNO</small></button>
+      <button data-num="7"><span>7</span><small>PQRS</small></button>
+      <button data-num="8"><span>8</span><small>TUV</small></button>
+      <button data-num="9"><span>9</span><small>WXYZ</small></button>
+      <button data-num="face" class="numpad-secondary">😊</button>
+      <button data-num="0"><span>0</span></button>
+      <button data-num="del" class="numpad-secondary">⌫</button>
+    </div>
+
+    <div class="login-hint">Подсказка для демо: 8514</div>
+  </div>
+
+  <div id="app" class="app hidden">
+
+    <header class="topbar">
+      <div class="user-pill" id="userPill">
+        <div class="avatar" id="avatar">ИИ</div>
+        <span id="userName">ИВАН ИВАНОВ</span>
+      </div>
+      <button class="logout-btn" id="logoutBtn">Выйти</button>
+    </header>
+
+    <section class="balance-card">
+      <div class="balance-label">Мой баланс</div>
+      <div class="balance-amount" id="balanceAmount">250 000 ₸</div>
+      <div class="balance-card-number" id="cardNumber">4400 4301 2345 1234</div>
+    </section>
+
+    <section class="quick-actions">
+      <button class="qa-btn" data-nav="transfer">
+        <div class="qa-icon">💸</div>
+        <div class="qa-text">Переводы</div>
+      </button>
+      <button class="qa-btn" data-nav="history">
+        <div class="qa-icon">📜</div>
+        <div class="qa-text">История</div>
+      </button>
+      <button class="qa-btn" data-nav="mybank">
+        <div class="qa-icon">🏦</div>
+        <div class="qa-text">Мой банк</div>
+      </button>
+    </section>
+
+    <section id="view-transfer" class="view hidden">
+      <h2 class="view-title">Переводы</h2>
+
+      <div class="contacts-list" id="contactsList"></div>
+
+      <div class="transfer-form" id="transferForm">
+        <div class="field">
+          <label>Получатель</label>
+          <div class="field-value" id="selectedRecipient">Выберите получателя</div>
+        </div>
+        <div class="field">
+          <label>Сумма</label>
+          <input type="number" id="amountInput" placeholder="0 ₸" />
+        </div>
+        <div class="field">
+          <label>Комментарий</label>
+          <input type="text" id="commentInput" placeholder="Например: за обед" />
+        </div>
+        <button class="btn-primary" id="sendTransferBtn">Перевести</button>
+      </div>
+    </section>
+
+    <section id="view-history" class="view hidden">
+      <h2 class="view-title">История операций</h2>
+      <div id="historyList" class="history-list"></div>
+    </section>
+
+    <section id="view-mybank" class="view hidden">
+      <h2 class="view-title">Мой банк</h2>
+      <p class="view-sub">Загружайте выписки, чеки и документы</p>
+
+      <label class="upload-zone" for="fileInput">
+        <div class="upload-icon">📎</div>
+        <div class="upload-text">Нажмите, чтобы загрузить файл</div>
+        <div class="upload-hint">PDF, JPG, PNG — до 10 МБ</div>
+      </label>
+      <input type="file" id="fileInput" hidden />
+
+      <div class="files-list" id="filesList"></div>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-nav="home">
+        <span>🏠</span><small>Главная</small>
+      </button>
+      <button class="nav-item" data-nav="transfer">
+        <span>💸</span><small>Переводы</small>
+      </button>
+      <button class="nav-item" data-nav="history">
+        <span>📜</span><small>История</small>
+      </button>
+      <button class="nav-item" data-nav="mybank">
+        <span>🏦</span><small>Мой банк</small>
+      </button>
+    </nav>
+
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
