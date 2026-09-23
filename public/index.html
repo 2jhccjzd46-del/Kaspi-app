@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#F14635" />
-  <title>Kaspi Demo</title>
+  <title>Kaspi.kz</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 
+  <!-- ЭКРАН ВХОДА -->
   <div id="loginScreen" class="login-screen">
     <div class="login-logo">kaspi</div>
     <div class="login-title">Введите код доступа</div>
@@ -35,43 +36,129 @@
     <div class="login-hint">Подсказка для демо: 8514</div>
   </div>
 
+  <!-- ГЛАВНОЕ ПРИЛОЖЕНИЕ -->
   <div id="app" class="app hidden">
 
-    <header class="topbar">
-      <div class="user-pill" id="userPill">
-        <div class="avatar" id="avatar">ИИ</div>
-        <span id="userName">ИВАН ИВАНОВ</span>
+    <!-- ЭКРАН 1: ГЛАВНАЯ (как Kaspi.kz) -->
+    <section id="view-home" class="view-home">
+      <!-- Поиск -->
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Поиск по Kaspi.kz" disabled />
       </div>
-      <button class="logout-btn" id="logoutBtn">Выйти</button>
-    </header>
 
-    <section class="balance-card">
-      <div class="balance-label">Мой баланс</div>
-      <div class="balance-amount" id="balanceAmount">250 000 ₸</div>
-      <div class="balance-card-number" id="cardNumber">4400 4301 2345 1234</div>
+      <!-- Баннеры -->
+      <div class="banners">
+        <div class="banner banner-blue">
+          <div class="banner-tag">ВСЁ В РАССРОЧКУ</div>
+          <div class="banner-big">0-0-12</div>
+          <div class="banner-date">19 сентября - 2 октября</div>
+        </div>
+        <div class="banner banner-red">
+          <div class="banner-tag">Автотовары</div>
+          <div class="banner-big">0-0-12</div>
+          <div class="banner-date">19 сентября - 2 октября</div>
+        </div>
+      </div>
+
+      <!-- Сервисы (сетка 4x2) -->
+      <div class="services">
+        <button class="service" data-nav="qr">
+          <div class="service-icon">📷</div>
+          <div class="service-text">Kaspi QR</div>
+        </button>
+        <button class="service" data-nav="mybank">
+          <div class="service-icon">🏦</div>
+          <div class="service-text">Мой банк</div>
+        </button>
+        <button class="service" data-nav="payments">
+          <div class="service-icon">💳</div>
+          <div class="service-text">Платежи</div>
+        </button>
+        <button class="service" data-nav="transfer">
+          <div class="service-icon">↗️</div>
+          <div class="service-text">Переводы</div>
+        </button>
+        <button class="service" data-nav="shop">
+          <div class="service-icon">🛒</div>
+          <div class="service-text">Магазин</div>
+        </button>
+        <button class="service" data-nav="promo">
+          <div class="service-icon">🎁</div>
+          <div class="service-text">Акции</div>
+        </button>
+        <button class="service" data-nav="travel">
+          <div class="service-icon">✈️</div>
+          <div class="service-text">Travel</div>
+        </button>
+        <button class="service" data-nav="gov">
+          <div class="service-icon">🏛️</div>
+          <div class="service-text">Госуслуги</div>
+        </button>
+      </div>
+
+      <!-- Партнёры -->
+      <div class="partners">
+        <div class="partner">
+          <div class="partner-logo market">M</div>
+          <div class="partner-info">
+            <div class="partner-name">Market.kz</div>
+            <div class="partner-sub">Объявления</div>
+          </div>
+        </div>
+        <div class="partner">
+          <div class="partner-logo magnum">🍎</div>
+          <div class="partner-info">
+            <div class="partner-name">Magnum</div>
+            <div class="partner-sub">Доставка</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Плитки -->
+      <div class="tiles">
+        <div class="tile tile-red">
+          <div class="tile-tag">0-0-12</div>
+          <div class="tile-name">Рассрочка 0-0-12</div>
+        </div>
+        <div class="tile tile-yellow">
+          <div class="tile-icon">🟡</div>
+          <div class="tile-name">Kaspi Gold</div>
+          <div class="tile-sub">Эффективная</div>
+        </div>
+        <div class="tile tile-dark">
+          <div class="tile-icon">💼</div>
+          <div class="tile-name">Kaspi Pay</div>
+          <div class="tile-sub">Приложение для бизнеса</div>
+        </div>
+        <div class="tile tile-green">
+          <div class="tile-icon">🟢</div>
+          <div class="tile-name">Кредиты</div>
+          <div class="tile-sub">До 2 млн ₸</div>
+        </div>
+      </div>
+
+      <div class="section-title">Вас могут заинтересовать</div>
+      <div class="banners" style="padding: 0 16px 16px;">
+        <div class="banner banner-green">
+          <div class="banner-tag">🟢 0-0-12</div>
+          <div class="banner-big">10% 🚗</div>
+        </div>
+        <div class="banner banner-grey">
+          <div class="banner-tag">🔴 0-0-12</div>
+          <div class="banner-big">10% 🚗</div>
+        </div>
+      </div>
     </section>
 
-    <section class="quick-actions">
-      <button class="qa-btn" data-nav="transfer">
-        <div class="qa-icon">💸</div>
-        <div class="qa-text">Переводы</div>
-      </button>
-      <button class="qa-btn" data-nav="history">
-        <div class="qa-icon">📜</div>
-        <div class="qa-text">История</div>
-      </button>
-      <button class="qa-btn" data-nav="mybank">
-        <div class="qa-icon">🏦</div>
-        <div class="qa-text">Мой банк</div>
-      </button>
-    </section>
-
+    <!-- ЭКРАН 2: ПЕРЕВОДЫ -->
     <section id="view-transfer" class="view hidden">
-      <h2 class="view-title">Переводы</h2>
-
+      <div class="view-header">
+        <button class="back-btn" data-nav="home">←</button>
+        <h2>Переводы</h2>
+      </div>
       <div class="contacts-list" id="contactsList"></div>
-
-      <div class="transfer-form" id="transferForm">
+      <div class="transfer-form">
         <div class="field">
           <label>Получатель</label>
           <div class="field-value" id="selectedRecipient">Выберите получателя</div>
@@ -88,13 +175,50 @@
       </div>
     </section>
 
+    <!-- ЭКРАН 3: МОЙ БАНК -->
+    <section id="view-mybank" class="view hidden">
+      <div class="view-header">
+        <button class="back-btn" data-nav="home">←</button>
+        <h2>Мой банк</h2>
+      </div>
+
+      <div class="balance-mini">
+        <div class="balance-mini-label">Мой баланс</div>
+        <div class="balance-mini-amount" id="balanceAmount">250 000 ₸</div>
+        <div class="balance-mini-card" id="cardNumber">4400 4301 2345 1234</div>
+      </div>
+
+      <div class="bank-actions">
+        <button class="bank-action" data-nav="history">
+          <div class="bank-action-icon">📜</div>
+          <div>История</div>
+        </button>
+        <button class="bank-action" data-nav="transfer">
+          <div class="bank-action-icon">↗️</div>
+          <div>Перевести</div>
+        </button>
+        <button class="bank-action" data-nav="files">
+          <div class="bank-action-icon">📎</div>
+          <div>Документы</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- ЭКРАН 4: ИСТОРИЯ -->
     <section id="view-history" class="view hidden">
-      <h2 class="view-title">История операций</h2>
+      <div class="view-header">
+        <button class="back-btn" data-nav="home">←</button>
+        <h2>История операций</h2>
+      </div>
       <div id="historyList" class="history-list"></div>
     </section>
 
-    <section id="view-mybank" class="view hidden">
-      <h2 class="view-title">Мой банк</h2>
+    <!-- ЭКРАН 5: ФАЙЛЫ -->
+    <section id="view ---files" class="viewtext hidden">
+      <div class=":view-header">
+        <button class="back-btn #" data-nav="mybank">←</1button>
+        <h2>Документы</h2>
+      </div>
       <p class="view-sub">Загружайте выписки, чеки и документы</p>
 
       <label class="upload-zone" for="fileInput">
@@ -103,22 +227,34 @@
         <div class="upload-hint">PDF, JPG, PNG — до 10 МБ</div>
       </label>
       <input type="file" id="fileInput" hidden />
-
       <div class="files-list" id="filesList"></div>
     </section>
 
+    <!-- ЭКРАН-ЗАГЛУШКА (для сервисов которых нет) -->
+    <section id="view-placeholder" class="view hidden">
+      <div class="view-header">
+        <button class="back-btn" data-nav="home">←</button>
+        <h2 id="placeholderTitle">Сервис</h2>
+      </div>
+      <div style="text-align:center;padding:60px 20px;opacity:0.5;">
+        <div style="font-size:48px;margin-bottom:16px;">🚧</div>
+        <div>В разработке</div>
+      </div>
+    </section>
+
+    <!-- Нижняя навигация как в Kaspi -->
     <nav class="bottom-nav">
       <button class="nav-item active" data-nav="home">
         <span>🏠</span><small>Главная</small>
       </button>
-      <button class="nav-item" data-nav="transfer">
-        <span>💸</span><small>Переводы</small>
+      <button class="nav-item" data-nav="qr">
+        <span>⊞</span><small>Kaspi QR</small>
       </button>
-      <button class="nav-item" data-nav="history">
-        <span>📜</span><small>История</small>
+      <button class="nav-item" data-nav="messages">
+        <span>💬</span><small>Сообщения</small>
       </button>
-      <button class="nav-item" data-nav="mybank">
-        <span>🏦</span><small>Мой банк</small>
+      <button class="nav-item" data-nav="services">
+        <span>☰</span><small>Сервисы</small>
       </button>
     </nav>
 
